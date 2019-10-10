@@ -235,6 +235,7 @@ class ServerEnvMixin(models.AbstractModel):
                 self[field_name] = self[default_field]
             else:
                 self[field_name] = False
+
     def _compute_server_env(self):
         """Read values from environment configuration files
 
