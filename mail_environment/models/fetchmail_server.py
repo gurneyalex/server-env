@@ -26,7 +26,7 @@ class FetchmailServer(models.Model):
         mail_fields.update(base_fields)
         return mail_fields
 
-    type = fields.Selection(search='_search_type')
+    server_type = fields.Selection(search='_search_server_type')
 
     @api.model
     def _server_env_global_section_name(self):
@@ -47,6 +47,6 @@ class FetchmailServer(models.Model):
         if oper not in operators:
             return [('id', 'in', [])]
         servers = self.search([]).filtered(
-            lambda s: operators[oper](value, s.type)
+            lambda s: operators[oper](value, s.server_type)
         )
         return [('id', 'in', servers.ids)]
