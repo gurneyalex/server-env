@@ -16,7 +16,7 @@ class FetchmailServer(models.Model):
         mail_fields = {
             "server": {},
             "port": {},
-            "type": {},
+            "server_type": {},
             "user": {},
             "password": {},
             "is_ssl": {},
